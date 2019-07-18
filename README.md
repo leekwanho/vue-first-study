@@ -2,6 +2,13 @@
 
 > A Vue.js project
 
+Destination is only study.
+
+Using open source is below.
+
+https://github.com/yaminncco/vue-sidebar-menu
+https://github.com/flatlogic/sing-app-vue-dashboard
+
 ## Build Setup
 
 ``` bash

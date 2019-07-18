@@ -1,0 +1,9 @@
+@import '../../styles/app';
+
+.tables-basic {
+  margin-left: 100px;
+  margin-right: 100px;
+  .table th {
+    font-size: $font-size-sm;
+  }
+}
