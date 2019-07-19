@@ -8,7 +8,8 @@
       <sidebar-menu
         :menu="menu"
         :collapsed="collapsed"
-        :theme="selectedTheme">`
+        :theme="selectedTheme"
+        @item-click="onItemClick">
       </sidebar-menu>
     </div>
   </div>
@@ -23,6 +24,7 @@ export default {
   name: 'App',
   data () {
     return {
+      gisuData: {},
       menu: [
         {
           header: true,
@@ -46,28 +48,63 @@ export default {
           href: '/login',
           title: 'login',
           icon: 'fas fa-sign-in-alt'
-        },
-        {
-          title: 'main',
-          icon: 'fa fa-chart-area',
-          child: [
-            {
-              href: '/loginSuccess',
-              title: '15기',
-              icon: {
-                class: 'fa fa-home',
-                element: 'span',
-                attributes: {},
-                text: '15'
-              }
-            }
-          ]
         }
       ],
       collapsed: true,
       themes: ['', 'white-theme'],
       selectedTheme: 'white-theme'
     }
+  },
+  methods: {
+    gisuSet () {
+      this.gisuData = {
+        title: '기수 선택',
+        icon: {
+          element: 'span',
+          attributes: {},
+          class: 'fab fa-weixin'
+        },
+        child: []
+      }
+    },
+    gisuChildSet () {
+      this.gisuData.child.push({
+        href: '/loginSuccess',
+        title: '15기',
+        kind: 'gisu-child',
+        text: '15',
+        icon: {
+          element: 'span',
+          attributes: {},
+          text: '15'
+        }
+      })
+      this.gisuData.child.push({
+        href: '/loginSuccess2',
+        title: '16기',
+        kind: 'gisu-child',
+        text: '16',
+        icon: {
+          element: 'span',
+          attributes: {},
+          text: '16'
+        }
+      })
+    },
+    onItemClick (event, item) {
+      if (item.kind === 'gisu-child') {
+        this.gisuData.icon.class = null
+        this.gisuData.icon.text = item.text
+      } else {
+        this.gisuData.icon.class = 'fab fa-weixin'
+        this.gisuData.icon.text = null
+      }
+    }
+  },
+  beforeMount () {
+    this.gisuSet()
+    this.gisuChildSet()
+    this.menu.push(this.gisuData)
   }
 }
 </script>
