@@ -4,14 +4,14 @@
       <form @submit="onSubmit">
           <input placeholder="Enter your ID" v-model="uid">
           <input placeholder="Enter your password" v-model="password">
-          <button type="submit">로그인?</button>
+          <button type="submit">로그인</button>
       </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Page2',
+  name: 'Login',
   data () {
     return {
       message: '2페이지',

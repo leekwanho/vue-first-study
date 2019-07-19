@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="app">
-      <img src="./assets/logo.png">
+      <img src="./assets/nexters.png" width="300" height="300">
       <router-view/>
     </div>
     <div>
@@ -43,7 +43,7 @@ export default {
           title: 'Option'
         },
         {
-          href: '/page2',
+          href: '/login',
           title: 'login',
           icon: 'fas fa-sign-in-alt'
         },

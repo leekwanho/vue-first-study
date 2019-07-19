@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Page2 from '@/components/Page2'
-import LoginSuccess from '@/components/LoginSuccess/LoginSuccess'
+import Home from '@/page/home/Home'
+import Login from '@/page/login/Login'
+import LoginSuccess from '@/page/LoginSuccess/LoginSuccess'
 
 Vue.use(Router)
 
@@ -17,9 +17,9 @@ export default new Router({
       props: true
     },
     {
-      path: '/page2',
-      name: 'Page2',
-      component: Page2,
+      path: '/login',
+      name: 'Login',
+      component: Login,
       props: true
     },
     {

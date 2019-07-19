@@ -5,7 +5,7 @@
       마우스 hover
     </span>
     <ol v-for="(todo, index) in todos" :key="index">
-      {{ index + " " + todo.text}}
+      {{ index + " " + todo.text}}e
     </ol>
     <button v-on:click="reverseMessage">메시지 뒤집기</button> <br>
     <input v-model="message">
