@@ -9,6 +9,7 @@
         :menu="menu"
         :collapsed="collapsed"
         :theme="selectedTheme"
+        :width="width"
         @item-click="onItemClick">
       </sidebar-menu>
     </div>
@@ -52,7 +53,8 @@ export default {
       ],
       collapsed: true,
       themes: ['', 'white-theme'],
-      selectedTheme: 'white-theme'
+      selectedTheme: 'white-theme',
+      width: '200px'
     }
   },
   methods: {
