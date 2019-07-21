@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import BootstrapVue from 'bootstrap-vue'
+import { store } from '@/store/store'
 
 Vue.use(VueSidebarMenu)
 Vue.use(BootstrapVue)
@@ -12,6 +13,7 @@ Vue.use(BootstrapVue)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

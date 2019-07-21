@@ -1,6 +1,6 @@
 <template>
   <div class="LoginSuccess">
-    <h1> {{ uid }} / {{ password }} 로그인</h1>
+    <h1> {{ $store.getters.getId }} 로그인</h1>
     <div class="tables-basic">
       <b-breadcrumb>
         <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
