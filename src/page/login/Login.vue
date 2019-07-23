@@ -23,7 +23,14 @@ export default {
   },
   methods: {
     onSubmit () {
-      LoginApi.login(this.uid, this.password)
+      const uid = this.uid
+      const password = this.password
+
+      if (!uid || !password) {
+        return false
+      }
+
+      LoginApi.login(uid, password)
         .then(res => this.goToPages(res.data))
         .catch(err => {
           alert('Login fail!', err)

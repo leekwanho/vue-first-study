@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/page/home/Home'
+import Signup from '@/page/signup/Signup'
 import Login from '@/page/login/Login'
 import LoginSuccess from '@/page/LoginSuccess/LoginSuccess'
 import LoginSuccess2 from '@/page/LoginSuccess2/LoginSuccess2'
@@ -15,6 +16,12 @@ export default new Router({
       alias: '/',
       name: 'Home',
       component: Home,
+      props: true
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup,
       props: true
     },
     {

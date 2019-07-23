@@ -40,6 +40,11 @@ export default {
           title: 'Option'
         },
         {
+          href: '/signup',
+          title: 'signup',
+          icon: 'fas fa-user-plus'
+        },
+        {
           href: '/login',
           title: 'login',
           icon: 'fas fa-sign-in-alt'

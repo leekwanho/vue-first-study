@@ -6,9 +6,11 @@ import router from './router'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import BootstrapVue from 'bootstrap-vue'
 import { store } from '@/store/store'
+import VeeValidate from 'vee-validate'
 
 Vue.use(VueSidebarMenu)
 Vue.use(BootstrapVue)
+Vue.use(VeeValidate)
 
 /* eslint-disable no-new */
 new Vue({
