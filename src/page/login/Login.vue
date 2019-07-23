@@ -1,7 +1,7 @@
 <template>
   <div class="Page2">
     <form @submit.prevent="onSubmit">
-      <h1>{{ message }}</h1>
+      <h1>로그인</h1>
       <input placeholder="Enter your ID" v-model="uid">
       <input placeholder="Enter your password" v-model="password">
       <button type="submit" :disabled='isDisabled'>로그인</button>
@@ -16,8 +16,6 @@ export default {
   name: 'Login',
   data () {
     return {
-      message: '2페이지',
-      requestData: '',
       uid: '',
       password: '',
       duringLogin: false
