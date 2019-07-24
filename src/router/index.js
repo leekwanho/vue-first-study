@@ -5,8 +5,15 @@ import Signup from '@/page/signup/Signup'
 import Login from '@/page/login/Login'
 import LoginSuccess from '@/page/LoginSuccess/LoginSuccess'
 import LoginSuccess2 from '@/page/LoginSuccess2/LoginSuccess2'
+import {store} from '@/store/store'
 
 Vue.use(Router)
+
+const requireAuth = () => (from, to, next) => {
+  console.log(store.getters.getAuth)
+  if (store.getters.getAuth) return next()
+  next('/login')
+}
 
 export default new Router({
   mode: 'history',
@@ -16,7 +23,8 @@ export default new Router({
       alias: '/',
       name: 'Home',
       component: Home,
-      props: true
+      props: true,
+      beforeEnter: requireAuth()
     },
     {
       path: '/signup',
@@ -34,13 +42,15 @@ export default new Router({
       path: '/loginSuccess',
       name: 'LoginSuccess',
       component: LoginSuccess,
-      props: true
+      props: true,
+      beforeEnter: requireAuth()
     },
     {
       path: '/loginSuccess2',
       name: 'LoginSuccess2',
       component: LoginSuccess2,
-      props: true
+      props: true,
+      beforeEnter: requireAuth()
     }
   ]
 })
